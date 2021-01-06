@@ -1,7 +1,6 @@
 package tech.blockchainers.crypyapi.http.client;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,10 +31,10 @@ public class EthereumClient {
     @Value("${service.url}")
     private String serviceUrl;
 
-    @Test
+    //@Test
     // Make sure address 0x7ff67156e5236B51b4F9c7dEf3878cFc7C6c33f7 has POA in Sokol Testnet before running the Test!
     public void shouldCallCompletePaymentFlow() throws InterruptedException, ExecutionException, IOException {
-        HttpHeaders headers = paymentHeaderService.createPaymentHeaders(senderCredentials.getAddress(), "jokeRequestService");
+        HttpHeaders headers = paymentHeaderService.createPaymentHeaders(senderCredentials.getAddress(), "chuckNorrisService");
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> entity = new HttpEntity<>(headers);
